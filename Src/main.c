@@ -142,7 +142,7 @@ void uart_tx_init(void) {
 	GPIOA->AFRL |= (1U << 8);         // AFRL2[0]
 	GPIOA->AFRL |= (1U << 9);         // AFRL2[1]
 	GPIOA->AFRL |= (1U << 10);        // AFRL2[2]
-	GPIOA->AFRL |= ~(1U << 11);       // AFRL2[3] should be cleared, but this line has incorrect use of '~'
+	GPIOA->AFRL &= ~(1U << 11);       // AFRL2[3] 
 
 	/********** Configure uart module **********/
 	/* Enable clock access to uart2 */
